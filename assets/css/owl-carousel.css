@@ -1,0 +1,28 @@
+/* owl start */
+.owl-all {
+    display: inline-block;
+}
+
+.owl-carousel {
+    padding: 30px;
+}
+
+.owl-carousel .card img {
+    height: 150px;
+}
+
+.owl-carousel .card {
+    padding: 10px;
+    margin: 8px;
+    transition: all 0.3s;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.owl-carousel .card:hover {
+    transform: scale(1.06);
+}
+
+.owl-carousel .card {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+/* owl end */

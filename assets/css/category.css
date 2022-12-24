@@ -1,0 +1,25 @@
+
+/* category start */
+.category-img{
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    margin: 5px;
+    border-radius: 5px;
+}
+.category-img a{
+    text-decoration: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: dimgrey;
+}
+.category-img a:hover{
+    color: rgb(28, 26, 26);
+}
+.category-img{
+    width: 180px;
+    height: 180px;
+    transition: all 0.2s;
+}
+.category-container .category-img:hover{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    transform: scale(1.04);
+}
+/* category end */
