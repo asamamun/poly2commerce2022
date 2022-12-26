@@ -1,3 +1,6 @@
+<?php
+require "inc/admin-auth.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>

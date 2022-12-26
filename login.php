@@ -19,7 +19,7 @@ if($rec['role'] == "1"){
     header("location:index.php");
 }
 if($rec['role'] == "2"){
-    header("location:dashboard.php");
+    header("location:admin-dashboard/");
 }
 }
 else{

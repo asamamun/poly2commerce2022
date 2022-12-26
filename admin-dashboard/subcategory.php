@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Category</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<?php
+require "inc/admin-auth.php";
+require "inc/header.php";
+?>
     <style>
         html,
         body * {
@@ -36,6 +31,7 @@
             box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.2);
             overflow: hidden;
             transition: all .5s ease
+        
         }
 
         form {
@@ -53,21 +49,50 @@
             margin: 0 auto;
         }
     </style>
-</head>
+    </head>
+    <body class="sb-nav-fixed">
 
-<body>
-    <!-- container start -->
+    <?php include 'inc/nav.php'; ?>
+    <div id="layoutSidenav">
+<?php include 'inc/sidenav.php'; ?>
+<div id="layoutSidenav_content">
+                
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">Order</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Order</li>
+                        </ol>
+                    </div>
+
+                <!-- container start -->
     <div class="container">
         <!-- frame start -->
         <div class="frame p-2">
             <!-- nav start -->
             <div class="nav mt-1">
-                <h3 class="title-name">Add Category</h3>
+                <h3 class="title-name">Add Sub Category</h3>
             </div>
             <!-- nav end -->
 
             <!-- form start -->
             <form action="" method="post">
+
+            <div class="form-group">
+                    <label for="category_id" class="form-label">Category ID</label>
+                    <select id="category_id" name="category_id" class="form-control form-select" aria-label="">
+                        <option>None</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                    </select>
+                </div>
 
                 <div class="form-group">
                     <label for="name" class="form-label">Name</label>
@@ -79,21 +104,42 @@
                     <textarea class="form-control description" id="description" rows="2"></textarea>
                 </div>
 
+                
                 <div class="form-group">
                     <label for="images" class="form-label">Image</label>
                     <input type="file" class="form-control" name="images" id="images">
                 </div>
 
                 <div class="d-grid gap-2 col-5 mx-auto">
-                    <button type="submit" id="addcategory" class="btn btn-primary mt-3">Add Category</button>
+                    <button type="submit" id="addsubcategory" class="btn btn-primary mt-3">Add Sub Category</button>
                 </div>
 
             </form><!-- form end -->
         </div> <!-- frame end -->
     </div><!-- container end -->
+                </main>
 
-   
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-</body>
 
+                <!--  -->
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; Your Website 2022</div>
+                            <div>
+                                <a href="#">Privacy Policy</a>
+                                &middot;
+                                <a href="#">Terms &amp; Conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+    </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="assets/demo/chart-area-demo.js"></script>
+        <script src="assets/demo/chart-bar-demo.js"></script>
+        <script src="assets/demo/chart-pie-demo.js"></script>
+    </body>
 </html>

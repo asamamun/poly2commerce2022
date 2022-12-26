@@ -12,7 +12,7 @@
         if($name == "") { $error=true; $message[] = "name required";}
         if($email == "") { $error=true; $message[] = "email required";}
         if(!$error){
-            $insertQuery = "INSERT INTO users values(null,'".$name."','".$email."','".password_hash($pass1,PASSWORD_DEFAULT)."','1',null)";
+            $insertQuery = "INSERT INTO users values(null,'".$name."','".$email."','".password_hash($pass1,PASSWORD_DEFAULT)."','2',null)";
             $conn->query($insertQuery);
             if($conn->affected_rows)
                 {
