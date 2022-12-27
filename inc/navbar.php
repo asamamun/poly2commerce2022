@@ -12,7 +12,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">All</a>
@@ -32,7 +32,9 @@ if (session_status() === PHP_SESSION_NONE) {
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link">Cart</a>
+          <a href="cart.php" class="nav-link position-relative">Cart
+            <span id="cartLength" class="position-absolute top-5 start-100 translate-middle badge rounded-pill bg-danger">
+    </span></a>
         </li>
       </ul>
       <form class="d-flex" role="search">

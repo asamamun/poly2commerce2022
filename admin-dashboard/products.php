@@ -138,6 +138,13 @@ $allcat = $conn->query($select);
                     <label for="discount" class="form-label">Discount</label>
                     <input type="text" class="form-control" name="discount" id="discount" placeholder="discount">
                 </div>
+                <div class="form-group">
+                    <label for="discount" class="form-label">HotItem</label>
+                    <select name="hot" id="hot">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
 
                 <div class="d-grid gap-2 col-5 mx-auto">
                     <button type="submit" name="addproduct" id="addproduct" class="btn btn-primary mt-3">Add Product</button>

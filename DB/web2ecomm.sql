@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 26, 2022 at 01:13 PM
+-- Generation Time: Dec 27, 2022 at 09:20 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -64,6 +64,7 @@ CREATE TABLE `products` (
   `quantity` int(11) NOT NULL,
   `images` varchar(512) NOT NULL,
   `discount` int(11) NOT NULL DEFAULT 0,
+  `hot` set('0','1') NOT NULL DEFAULT '1',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -71,13 +72,13 @@ CREATE TABLE `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `sku`, `category_id`, `subcategory_id`, `name`, `description`, `price`, `quantity`, `images`, `discount`, `created_at`) VALUES
-(1, '', 2, 3, 'Asus aj', '', 333333.00, 50, '', 5, '2022-12-26 06:49:20'),
-(3, 'asd', 2, 3, 'asdasd', 'asdffdsgdfg', 5555.00, 44, '63a9450d7c3d2.png', 3, '2022-12-26 06:54:05'),
-(4, '111', 2, 3, 'aaaaa', 'aaaaaaaaaaaaaaaaaaa', 120.00, 50, '63a9462acf254.png', 50, '2022-12-26 06:58:50'),
-(5, '99', 1, 2, 'Redmi Note 9', 'Redmi Note 9 is a line of Android-based smartphones as part of the Redmi Note series by Redmi, a sub-brand of Xiaomi Inc.', 18.00, 1, '63a9464c8d07d.png', 10, '2022-12-26 06:59:24'),
-(8, 'mobbb', 2, 4, 'asdfasdf', 'asdfasdfdsa fdsafsdaf', 77777.00, 40, '63a949435589f.png', 0, '2022-12-26 07:12:03'),
-(9, 'sku', 1, 2, 'Rafi', 'none', 2100.00, 2, '63a9498b6856f.png', 21, '2022-12-26 07:13:15');
+INSERT INTO `products` (`id`, `sku`, `category_id`, `subcategory_id`, `name`, `description`, `price`, `quantity`, `images`, `discount`, `hot`, `created_at`) VALUES
+(3, 'asd', 2, 3, 'asdasd', 'asdffdsgdfg', 5555.00, 44, '63a9450d7c3d2.png', 3, '1', '2022-12-26 06:54:05'),
+(4, '111', 2, 3, 'aaaaa', 'aaaaaaaaaaaaaaaaaaa', 120.00, 50, '63a9462acf254.png', 50, '0', '2022-12-26 06:58:50'),
+(5, '99', 1, 2, 'Redmi Note 9', 'Redmi Note 9 is a line of Android-based smartphones as part of the Redmi Note series by Redmi, a sub-brand of Xiaomi Inc.', 18.00, 1, '63a9464c8d07d.png', 10, '1', '2022-12-26 06:59:24'),
+(8, 'mobbb', 2, 4, 'asdfasdf', 'asdfasdfdsa fdsafsdaf', 77777.00, 40, '63a949435589f.png', 0, '1', '2022-12-26 07:12:03'),
+(9, 'sku', 1, 2, 'Rafi', 'none', 2100.00, 2, '63a9498b6856f.png', 21, '1', '2022-12-26 07:13:15'),
+(10, 'dell12345', 2, 3, 'Dell Latitude', 'some desc', 50000.00, 50, '63aaf39fa58dd.png', 2, '1', '2022-12-27 13:31:11');
 
 -- --------------------------------------------------------
 
@@ -189,7 +190,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `subcategories`

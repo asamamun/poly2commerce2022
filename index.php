@@ -1,18 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home page: polycommerce</title>
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/lightbox.min.css">
-    <link rel="stylesheet" href="assets/css/footer.css">
-    <link rel="stylesheet" href="assets/owl-carousal/assets/owl.carousel.css">
-    <link rel="stylesheet" href="assets/owl-carousal/assets/owl.theme.default.min.css">
-    <link rel="stylesheet" href="assets/css/owl-carousel.css">
-    <link rel="stylesheet" href="assets/css/category.css">
+<?php
+require "inc/connection.php";
+$selectQ = "select * from products where hot='1' order by created_at desc limit 20";
+$hotitems = $conn->query($selectQ);
+?>
+<?php include "inc/header.php"; ?>
 </head>
 
 <body>
@@ -36,13 +27,24 @@
         <!-- footer start -->
         <?php include "inc/footer.php"; ?>
         <!-- footer end -->
-    </div>
-
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/jquery-3.6.3.min.js"></script>
-    <script src="assets/js/lightbox.min.js"></script>
-    <script src="assets/owl-carousal/owl.carousel.min.js"></script>
-    <script src="assets/js/owl-carousel.js"></script>
+    <script>
+        $(document).ready(function () {
+            const cart = new Cart();
+            $("#cartLength").html(cart.totalItems());
+            //cart.addItem({ name: 'Item 1', price: 10 });
+            $(".addToCart").click(function(){
+                $t = $(this);
+                let id = $t.data('id');
+                let name = $t.parent().find(".pname").text();
+                let price = $t.parent().find(".pprice").text();
+                let image = $t.parent().parent().find(".card-img-top").attr("src");
+                //alert(name + " (" + price + ")" + image);
+                cart.addItem({id:id,name:name,price:price,image:image});
+                alert("Item "+ name +" Added!");
+                $("#cartLength").html(cart.totalItems());
+            });
+        });
+    </script>
     
 </body>
 
