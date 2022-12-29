@@ -15,7 +15,7 @@ if (session_status() === PHP_SESSION_NONE) {
           <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">All</a>
+          <a class="nav-link" href="all-products.php">All</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

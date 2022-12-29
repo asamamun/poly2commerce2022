@@ -13,3 +13,12 @@ ADD FOREIGN KEY (category_id) REFERENCES categories(id);
 
 ALTER TABLE products
 ADD FOREIGN KEY (subcategory_id) REFERENCES subcategories(id);
+
+ALTER TABLE orders
+ADD FOREIGN KEY (user_id) REFERENCES users(id);
+
+ALTER TABLE orderdetails
+ADD FOREIGN KEY (order_id) REFERENCES orders(id);
+
+ALTER TABLE orderdetails
+ADD FOREIGN KEY (product_id) REFERENCES products(id);

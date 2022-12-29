@@ -1,6 +1,9 @@
 <?php
 require "inc/admin-auth.php";
 require "inc/header.php";
+require "../inc/connection.php";
+$q = "select id,name from categories where 1";
+$qr = $conn->query($q);
 ?>
     <style>
         html,
@@ -82,15 +85,12 @@ require "inc/header.php";
             <div class="form-group">
                     <label for="category_id" class="form-label">Category ID</label>
                     <select id="category_id" name="category_id" class="form-control form-select" aria-label="">
-                        <option>None</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                        <option>7</option>
-                        <option>8</option>
+                        <option value="-1">Select</option>
+                        <?php
+                        while($row = $qr->fetch_assoc()){
+                            echo "<option value='".$row['id']."'>".$row['name']."</option>";
+                        }
+                        ?>
                     </select>
                 </div>
 

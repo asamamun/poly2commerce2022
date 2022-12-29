@@ -120,3 +120,21 @@
     <script src="assets/owl-carousal/owl.carousel.min.js"></script>
     <script src="assets/js/owl-carousel.js"></script>
     <script src="assets/js/cart.js"></script>
+    <script>
+        $(document).ready(function () {
+            const cart = new Cart();
+            $("#cartLength").html(cart.totalItems());
+            //cart.addItem({ name: 'Item 1', price: 10 });
+            $(".addToCart").click(function(){
+                $t = $(this);
+                let id = $t.data('id');
+                let name = $t.parent().find(".pname").text();
+                let price = $t.parent().find(".pprice").text();
+                let image = $t.parent().parent().find(".card-img-top").attr("src");
+                //alert(name + " (" + price + ")" + image);
+                cart.addItem({id:id,name:name,price:price,image:image});
+                alert("Item "+ name +" Added!");
+                $("#cartLength").html(cart.totalItems());
+            });
+        });
+    </script>

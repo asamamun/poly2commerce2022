@@ -1,5 +1,6 @@
 class Cart {
     constructor() {
+      // localStorage.removeItem('cartItems');
       // Get the cart items from local storage, if any
       this.items = JSON.parse(localStorage.getItem('cartItems')) || [];
     }
@@ -27,6 +28,10 @@ class Cart {
     }
     totalItems(){
         return this.items.length;
+    }
+    emptyCart(){
+      this.items = [];
+      localStorage.removeItem('cartItems');
     }
   }
   

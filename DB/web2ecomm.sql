@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 27, 2022 at 09:20 PM
+-- Generation Time: Dec 29, 2022 at 01:08 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -46,6 +46,130 @@ INSERT INTO `categories` (`id`, `name`, `description`, `image`, `created_at`) VA
 (4, 'Property', 'Property', 'property.png', '2022-12-26 05:32:25'),
 (5, 'Fashion', 'Fashion', 'fashion.png', '2022-12-26 05:32:46'),
 (6, 'Sports', 'Sports', 'sports.png', '2022-12-26 05:33:13');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orderdetails`
+--
+
+CREATE TABLE `orderdetails` (
+  `id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `price` float(10,2) NOT NULL,
+  `quantity` int(4) NOT NULL DEFAULT 1,
+  `op` varchar(128) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `orderdetails`
+--
+
+INSERT INTO `orderdetails` (`id`, `order_id`, `product_id`, `price`, `quantity`, `op`, `created_at`) VALUES
+(1, 11, 3, 5555.00, 1, '', '2022-12-29 06:21:40'),
+(2, 11, 8, 77777.00, 1, '', '2022-12-29 06:21:40'),
+(3, 11, 5, 18.00, 1, '', '2022-12-29 06:21:40'),
+(4, 12, 3, 5555.00, 1, '', '2022-12-29 06:22:21'),
+(5, 12, 8, 77777.00, 1, '', '2022-12-29 06:22:21'),
+(6, 12, 5, 18.00, 1, '', '2022-12-29 06:22:21'),
+(7, 13, 3, 5555.00, 1, '', '2022-12-29 06:23:02'),
+(8, 13, 8, 77777.00, 1, '', '2022-12-29 06:23:02'),
+(9, 13, 5, 18.00, 1, '', '2022-12-29 06:23:02'),
+(10, 14, 3, 5555.00, 1, '', '2022-12-29 06:23:53'),
+(11, 14, 8, 77777.00, 1, '', '2022-12-29 06:23:53'),
+(12, 14, 5, 18.00, 1, '', '2022-12-29 06:23:53'),
+(13, 15, 3, 5555.00, 1, '', '2022-12-29 06:27:31'),
+(14, 15, 8, 77777.00, 1, '', '2022-12-29 06:27:31'),
+(15, 15, 5, 18.00, 1, '', '2022-12-29 06:27:31'),
+(16, 16, 10, 50000.00, 1, '', '2022-12-29 06:29:11'),
+(17, 16, 10, 50000.00, 1, '', '2022-12-29 06:29:12'),
+(18, 17, 3, 5555.00, 1, '', '2022-12-29 06:29:40'),
+(19, 17, 8, 77777.00, 1, '', '2022-12-29 06:29:40'),
+(20, 17, 5, 18.00, 1, '', '2022-12-29 06:29:41'),
+(21, 18, 10, 50000.00, 1, '', '2022-12-29 06:30:42'),
+(22, 18, 10, 50000.00, 1, '', '2022-12-29 06:30:42'),
+(23, 19, 10, 50000.00, 1, '', '2022-12-29 06:30:57'),
+(24, 19, 10, 50000.00, 1, '', '2022-12-29 06:30:57'),
+(25, 20, 3, 5555.00, 1, '', '2022-12-29 06:31:02'),
+(26, 20, 8, 77777.00, 1, '', '2022-12-29 06:31:02'),
+(27, 20, 5, 18.00, 1, '', '2022-12-29 06:31:02'),
+(28, 21, 10, 50000.00, 1, '', '2022-12-29 06:31:10'),
+(29, 21, 10, 50000.00, 1, '', '2022-12-29 06:31:10'),
+(30, 22, 10, 50000.00, 1, '', '2022-12-29 06:31:25'),
+(31, 22, 10, 50000.00, 1, '', '2022-12-29 06:31:25'),
+(32, 23, 10, 50000.00, 1, '', '2022-12-29 06:35:01'),
+(33, 23, 9, 2100.00, 1, '', '2022-12-29 06:35:02'),
+(34, 23, 5, 18.00, 1, '', '2022-12-29 06:35:02'),
+(35, 24, 10, 50000.00, 1, '', '2022-12-29 06:50:58'),
+(36, 24, 9, 2100.00, 1, '', '2022-12-29 06:50:58'),
+(37, 24, 10, 50000.00, 1, '', '2022-12-29 06:50:58'),
+(38, 24, 9, 2100.00, 1, '', '2022-12-29 06:50:58'),
+(39, 25, 8, 77777.00, 1, '', '2022-12-29 06:51:04'),
+(40, 25, 3, 5555.00, 1, '', '2022-12-29 06:51:04'),
+(41, 25, 9, 2100.00, 1, '', '2022-12-29 06:51:04'),
+(42, 25, 8, 77777.00, 1, '', '2022-12-29 06:51:04'),
+(43, 26, 8, 77777.00, 1, '', '2022-12-29 06:51:07'),
+(44, 26, 3, 5555.00, 1, '', '2022-12-29 06:51:07'),
+(45, 26, 9, 2100.00, 1, '', '2022-12-29 06:51:07'),
+(46, 26, 8, 77777.00, 1, '', '2022-12-29 06:51:07'),
+(47, 27, 8, 77777.00, 1, '', '2022-12-29 06:51:20'),
+(48, 27, 3, 5555.00, 1, '', '2022-12-29 06:51:20'),
+(49, 27, 9, 2100.00, 1, '', '2022-12-29 06:51:20'),
+(50, 27, 8, 77777.00, 1, '', '2022-12-29 06:51:20'),
+(51, 28, 8, 77777.00, 1, '', '2022-12-29 06:51:20'),
+(52, 28, 3, 5555.00, 1, '', '2022-12-29 06:51:21'),
+(53, 28, 9, 2100.00, 1, '', '2022-12-29 06:51:21'),
+(54, 28, 8, 77777.00, 1, '', '2022-12-29 06:51:21');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `total` float(10,2) NOT NULL,
+  `discount` float(6,2) NOT NULL,
+  `comment` varchar(512) NOT NULL,
+  `payment` set('cash','bkash','nogod','cod') NOT NULL,
+  `trxid` varchar(72) NOT NULL,
+  `status` set('pe','pr','sh','co') NOT NULL DEFAULT 'pe' COMMENT '"pending","processing","shipped","completed"',
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `user_id`, `total`, `discount`, `comment`, `payment`, `trxid`, `status`, `created_at`) VALUES
+(1, 2, 87517.50, 0.00, 'asdfdsafdsf', 'bkash', 'asd', 'pe', '2022-12-29 05:53:32'),
+(3, 2, 87000.00, 517.50, 'asdfdsafdsf', 'bkash', 'asd123', 'pe', '2022-12-29 05:54:08'),
+(4, 2, 87000.00, 517.50, 'asdfdsafdsf', 'bkash', 'asd124', 'pe', '2022-12-29 05:55:05'),
+(5, 24, 5000.00, 851.65, 'hey sir', 'cod', '12dfgg3344d', 'pe', '2022-12-29 05:55:53'),
+(6, 24, 100000.00, 5000.00, 'Amr product ta taratari jeno pai', 'bkash', 'BD06232025610402', 'pe', '2022-12-29 06:10:14'),
+(9, 2, 87000.00, 517.50, '123', 'cash', '', 'pe', '2022-12-29 06:20:15'),
+(11, 2, 87000.00, 517.50, '123', 'cash', '', 'pe', '2022-12-29 06:21:40'),
+(12, 2, 87000.00, 517.50, 'asfdsdaf', 'cash', '', 'pe', '2022-12-29 06:22:21'),
+(13, 2, 87394.50, 123.00, 'asdf', 'cash', '', 'pe', '2022-12-29 06:23:01'),
+(14, 2, 87394.50, 123.00, 'sdf', 'cash', '', 'pe', '2022-12-29 06:23:53'),
+(15, 2, 87000.00, 517.50, '123', 'cash', '', 'pe', '2022-12-29 06:27:31'),
+(16, 24, 104934.00, 66.00, 'ergvbt', 'cash', 'dfcrtgetvyvb643', 'pe', '2022-12-29 06:29:11'),
+(17, 2, 87394.50, 123.00, 'asdf', 'bkash', 'sadf', 'pe', '2022-12-29 06:29:40'),
+(18, 24, 104934.00, 66.00, 'ergvbt', 'cash', 'dfcrtgetvyvb643', 'pe', '2022-12-29 06:30:42'),
+(19, 24, 0.00, 0.00, '5cwqfd ', 'cash', '5555523vrfgv', 'pe', '2022-12-29 06:30:57'),
+(20, 2, 87394.50, 123.00, 'sdfdsf', 'bkash', '123', 'pe', '2022-12-29 06:31:02'),
+(21, 24, 0.00, 0.00, '5cwqfd ', 'cash', '5555523vrfgv', 'pe', '2022-12-29 06:31:10'),
+(22, 24, 104985.00, 15.00, 'f v tvrtc', 'cash', 'dfffffffffffffffffffffff', 'pe', '2022-12-29 06:31:25'),
+(23, 2, 54700.00, 23.90, '123', 'cash', '123', 'pe', '2022-12-29 06:35:01'),
+(24, 24, 109395.00, 15.00, 'sir amr product ta taratari diye diyen', 'cash', 'BD06232025610402', 'pe', '2022-12-29 06:50:57'),
+(25, 23, 171339.45, 30.00, 'rytryn6e', 'bkash', 'rtrt', 'pe', '2022-12-29 06:51:04'),
+(26, 23, 171339.45, 30.00, 'rytryn6e', 'bkash', 'rtrt', 'pe', '2022-12-29 06:51:07'),
+(27, 23, 171339.45, 30.00, 'rytryn6e', 'bkash', 'rtrt', 'pe', '2022-12-29 06:51:20'),
+(28, 23, 171339.45, 30.00, 'rytryn6e', 'bkash', 'rtrt', 'pe', '2022-12-29 06:51:20');
 
 -- --------------------------------------------------------
 
@@ -140,7 +264,11 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`, `role`, `created_at`
 (18, 'nishat', 'nishat@gmail.com', '$2y$10$xB3f0RqX43mjAq1KgL5lUuskftfjDpL7MqBf9EeOKILVzrCxQl8UG', '1', '2022-12-26 06:59:13'),
 (19, 'Akhi Ali', 'akhi@gmail.com', '$2y$10$.I2EFX1Kbecp8oJrrnCAC.DHB1J.Z4UZT0Yr6eej5JNVleDIBrpcS', '1', '2022-12-26 07:02:14'),
 (20, 'Mosa: Lima Akter', 'limaislam4334@gmail.com', '$2y$10$r9jxz3Rz7TmIzOSAODQVw.F7wbOBR1YYvmpsvAbKULxAp9lfQLb2i', '1', '2022-12-26 07:02:52'),
-(21, 'test', 'test@gmail.com', '$2y$10$vuebGOJRHf4VxKkfIBQ.geSQJ.SAFlsa3kl0E.Gwaj8lf1IO2SqPy', '2', '2022-12-26 07:05:17');
+(21, 'test', 'test@gmail.com', '$2y$10$vuebGOJRHf4VxKkfIBQ.geSQJ.SAFlsa3kl0E.Gwaj8lf1IO2SqPy', '2', '2022-12-26 07:05:17'),
+(22, 'ignes', 'ignesis@gmail.com', '$2y$10$t2ZwoJ7lOLGVv6a8dH5O0eIPuPh4FNMULf/vE0tKKbOC2P8lVPSry', '2', '2022-12-29 05:32:33'),
+(23, 'shubo', 'shubo@gmail.com', '$2y$10$OyY5oOfSXhzolalFiHhkpuTfEoQdF37CV6fgoE3DVV24/LvzIRolu', '1', '2022-12-29 05:51:22'),
+(24, 'abcd', 'abcd@gmail.com', '$2y$10$OMqzsRwk4picY3ymz5/J9O9qJJqMyDNwUUODDpIsfnOGmjQ5GVJ0.', '2', '2022-12-29 05:54:45'),
+(25, 'weirdrafi', 'Rafi@test.com', '$2y$10$HQzLeKFkukYBzHszOsmAK.k2gAfaie7FoZyzl5mdBs8KmQ00ILOHW', '2', '2022-12-29 06:50:08');
 
 --
 -- Indexes for dumped tables
@@ -152,6 +280,21 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`, `role`, `created_at`
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `name` (`name`);
+
+--
+-- Indexes for table `orderdetails`
+--
+ALTER TABLE `orderdetails`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `order_id` (`order_id`),
+  ADD KEY `product_id` (`product_id`);
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `products`
@@ -187,6 +330,18 @@ ALTER TABLE `categories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT for table `orderdetails`
+--
+ALTER TABLE `orderdetails`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
+--
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
@@ -202,11 +357,24 @@ ALTER TABLE `subcategories`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `orderdetails`
+--
+ALTER TABLE `orderdetails`
+  ADD CONSTRAINT `orderdetails_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`),
+  ADD CONSTRAINT `orderdetails_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`);
+
+--
+-- Constraints for table `orders`
+--
+ALTER TABLE `orders`
+  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 --
 -- Constraints for table `products`

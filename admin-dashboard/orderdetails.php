@@ -2,7 +2,7 @@
 require "inc/admin-auth.php";
 require "inc/header.php";
 require "../inc/connection.php";
-$q = "select * from orders where 1 order by created_at desc";
+$q = "select * from orderdetails where order_id = '".$_GET['id']."'";
 $r = $conn->query($q);
 ?>
 
@@ -25,10 +25,8 @@ $r = $conn->query($q);
 // show the orders table in table
 while($row = $r->fetch_assoc()){
     echo $row['id'] . "<br>";
-    echo $row['user_id'] . "<br>";
-    echo $row['total'] . "<br>";
-    echo $row['discount'] . "<br>";
-    echo  "<a href='orderdetails.php?id=".$row['id']."'>Details</a><hr>";
+    echo $row['product_id'] . "<hr>";
+    
 }
 ?>
 <!-- order end -->
