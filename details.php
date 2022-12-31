@@ -10,7 +10,7 @@ $selectQ = "select * from products where id='".$id."' limit 1";
 $prod = $conn->query($selectQ);
 if($prod->num_rows != 1){ $message = "product not found"; exit;}
 $d = $prod->fetch_assoc();
-var_dump($d);
+// var_dump($d);
 ?>
 <?php include "inc/header.php"; ?>
 <style>
@@ -161,9 +161,6 @@ var_dump($d);
 
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/jquery-3.6.3.min.js"></script>
-    <script src="assets/js/lightbox.min.js"></script>
-    <script src="assets/owl-carousal/owl.carousel.min.js"></script>
-    <script src="assets/js/owl-carousel.js"></script>
     
 </body>
 

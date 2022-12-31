@@ -31,6 +31,19 @@ if (session_status() === PHP_SESSION_NONE) {
             <li><a class="dropdown-item" href="#">Foods</a></li>
           </ul>
         </li>
+        <?php if(isset($_SESSION['loggedin'])  && $_SESSION['loggedin'] && $_SESSION['role'] == "2" ) { ?>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Admin
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="admin-dashboard/index.php">Dashboard</a></li>
+            <li><a class="dropdown-item" href="admin-dashboard/category.php">Category</a></li>
+            <li><a class="dropdown-item" href="admin-dashboard/products.php">Product</a></li>
+            <li><a class="dropdown-item" href="admin-dashboard/order.php">Orders</a></li>
+          </ul>
+        </li>
+        <?php } ?>
         <li class="nav-item">
           <a href="cart.php" class="nav-link position-relative">Cart
             <span id="cartLength" class="position-absolute top-5 start-100 translate-middle badge rounded-pill bg-danger">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 29, 2022 at 01:08 PM
+-- Generation Time: Dec 31, 2022 at 01:06 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -40,12 +40,13 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `description`, `image`, `created_at`) VALUES
-(1, 'Mobile', 'mobile', 'mobile.jpg', '2022-12-26 05:31:08'),
-(2, 'Electronics', 'Electronics', 'electronics.png', '2022-12-26 05:31:33'),
-(3, 'vehicle', 'vehicle', 'vehicle.png', '2022-12-26 05:31:54'),
-(4, 'Property', 'Property', 'property.png', '2022-12-26 05:32:25'),
-(5, 'Fashion', 'Fashion', 'fashion.png', '2022-12-26 05:32:46'),
-(6, 'Sports', 'Sports', 'sports.png', '2022-12-26 05:33:13');
+(1, 'Mobile', 'mobile', 'mobile.png', '2022-12-26 05:31:08'),
+(2, 'Electronics', 'Electronics', 'category-img-2.jpg', '2022-12-26 05:31:33'),
+(3, 'vehicle', 'vehicle', 'category-img-3.jpg', '2022-12-26 05:31:54'),
+(4, 'Property', 'Property', 'category-img-4.jpg', '2022-12-26 05:32:25'),
+(5, 'Fashion', 'Fashion', 'category-img-5.jpg', '2022-12-26 05:32:46'),
+(6, 'Sports', 'Sports', 'category-img-6.jpg', '2022-12-26 05:33:13'),
+(7, 'Food', 'food', 'food.png', '2022-12-31 06:20:13');
 
 -- --------------------------------------------------------
 
@@ -165,11 +166,11 @@ INSERT INTO `orders` (`id`, `user_id`, `total`, `discount`, `comment`, `payment`
 (21, 24, 0.00, 0.00, '5cwqfd ', 'cash', '5555523vrfgv', 'pe', '2022-12-29 06:31:10'),
 (22, 24, 104985.00, 15.00, 'f v tvrtc', 'cash', 'dfffffffffffffffffffffff', 'pe', '2022-12-29 06:31:25'),
 (23, 2, 54700.00, 23.90, '123', 'cash', '123', 'pe', '2022-12-29 06:35:01'),
-(24, 24, 109395.00, 15.00, 'sir amr product ta taratari diye diyen', 'cash', 'BD06232025610402', 'pe', '2022-12-29 06:50:57'),
-(25, 23, 171339.45, 30.00, 'rytryn6e', 'bkash', 'rtrt', 'pe', '2022-12-29 06:51:04'),
-(26, 23, 171339.45, 30.00, 'rytryn6e', 'bkash', 'rtrt', 'pe', '2022-12-29 06:51:07'),
-(27, 23, 171339.45, 30.00, 'rytryn6e', 'bkash', 'rtrt', 'pe', '2022-12-29 06:51:20'),
-(28, 23, 171339.45, 30.00, 'rytryn6e', 'bkash', 'rtrt', 'pe', '2022-12-29 06:51:20');
+(24, 24, 109395.00, 15.00, 'sir amr product ta taratari diye diyen', 'cash', 'BD06232025610402', 'sh', '2022-12-29 06:50:57'),
+(25, 23, 171339.45, 30.00, 'rytryn6e', 'bkash', 'rtrt', 'co', '2022-12-29 06:51:04'),
+(26, 23, 171339.45, 30.00, 'rytryn6e', 'bkash', 'rtrt', 'co', '2022-12-29 06:51:07'),
+(27, 23, 171339.45, 30.00, 'rytryn6e', 'bkash', 'rtrt', 'co', '2022-12-29 06:51:20'),
+(28, 23, 171339.45, 30.00, 'rytryn6e', 'bkash', 'rtrt', 'sh', '2022-12-29 06:51:20');
 
 -- --------------------------------------------------------
 
@@ -268,7 +269,8 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`, `role`, `created_at`
 (22, 'ignes', 'ignesis@gmail.com', '$2y$10$t2ZwoJ7lOLGVv6a8dH5O0eIPuPh4FNMULf/vE0tKKbOC2P8lVPSry', '2', '2022-12-29 05:32:33'),
 (23, 'shubo', 'shubo@gmail.com', '$2y$10$OyY5oOfSXhzolalFiHhkpuTfEoQdF37CV6fgoE3DVV24/LvzIRolu', '1', '2022-12-29 05:51:22'),
 (24, 'abcd', 'abcd@gmail.com', '$2y$10$OMqzsRwk4picY3ymz5/J9O9qJJqMyDNwUUODDpIsfnOGmjQ5GVJ0.', '2', '2022-12-29 05:54:45'),
-(25, 'weirdrafi', 'Rafi@test.com', '$2y$10$HQzLeKFkukYBzHszOsmAK.k2gAfaie7FoZyzl5mdBs8KmQ00ILOHW', '2', '2022-12-29 06:50:08');
+(25, 'weirdrafi', 'Rafi@test.com', '$2y$10$HQzLeKFkukYBzHszOsmAK.k2gAfaie7FoZyzl5mdBs8KmQ00ILOHW', '2', '2022-12-29 06:50:08'),
+(26, 'ibn', 'ibn1146@gmail.com', '$2y$10$ygOR2k5rYOziT8SNVoUeOuhOjvh8ar8kw6.TZ5/aaIjsp5xUQhXjS', '2', '2022-12-31 06:37:40');
 
 --
 -- Indexes for dumped tables
@@ -327,7 +329,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `orderdetails`
@@ -357,7 +359,7 @@ ALTER TABLE `subcategories`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- Constraints for dumped tables

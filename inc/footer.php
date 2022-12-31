@@ -111,7 +111,9 @@
             </div>
         </div>
     </footer>
-
+<!-- sharethis -->
+<div class="sharethis-sticky-share-buttons"></div>
+<!-- sharethis -->
     </div>
 
     <script src="assets/js/bootstrap.bundle.min.js"></script>
@@ -120,6 +122,7 @@
     <script src="assets/owl-carousal/owl.carousel.min.js"></script>
     <script src="assets/js/owl-carousel.js"></script>
     <script src="assets/js/cart.js"></script>
+    
     <script>
         $(document).ready(function () {
             const cart = new Cart();

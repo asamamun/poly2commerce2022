@@ -20,17 +20,59 @@ $r = $conn->query($q);
                         <li class="breadcrumb-item active">Dashboard</li>
                     </ol>
 <!-- order -->
-<?php
+<div id="tableContainer">
+    <p> <strong>Legend : </strong>
+        <span class="smallbox bg-danger"></span> = Pending , 
+        <span class="smallbox bg-primary"></span> = Processing , 
+        <span class="smallbox bg-info"></span> = Shipped , 
+        <span class="smallbox bg-success"></span> = Complete , 
+    </p>
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>User Name</th>
+            <th>Total</th>
+            <th>Discount</th>
+            <th>Comment</th>
+            <th>Payment</th>
+            <th>Transaction ID</th>
+            <th>Status</th>
+            <th>Products</th>
+            <th>Order Time</th>            
+            <th>Action</th>
+        </tr>
+        <tbody>
+            <?php
+            require "../inc/connection.php";
+        $q = "select orders.*, users.username as username from orders,users where orders.user_id=users.id order by orders.created_at desc";
+        $allp = $conn->query($q);
+        $html = "";
+        while($row = $allp->fetch_assoc()){
+            $html .="<tr>";
+            $html .="<td>".$row['id']."</td>";
+            $html .="<td>".$row['username']."</td>";
+            $html .="<td>".$row['total']."</td>";
+            $html .="<td>".$row['discount']."</td>";
+            $html .="<td>".$row['comment']."</td>";
+            $html .="<td>".$row['payment']."</td>";
+            $html .="<td>".$row['trxid']."</td>";
+            $boxcolor = null;
+            if($row['status'] == "pe"){$boxcolor = "bg-danger";}
+            if($row['status'] == "pr"){$boxcolor = "bg-primary";}
+            if($row['status'] == "sh"){$boxcolor = "bg-info";}
+            if($row['status'] == "co"){$boxcolor = "bg-success";}
+            $html .="<td><span class='smallbox ".$boxcolor."'> </span>".$row['status']."</td>";
+            $html .="<td>all products list</td>";
+            $html .="<td>".$row['created_at']."</td>";            
+            $html .="<td><a title='edit status' target='_blank' href='orderstatus.php?id=".$row['id']."'><i class='bi bi-pencil-square'></i></a> | <a title='order details' target='_blank' href='orderdetails.php?id=".$row['id']."'><i class='bi bi-binoculars'></i></a></td>";
+            $html .="</tr>";
+        }
+        echo $html;
+            ?>
+        </tbody>
+    </table>
+</div>
 
-// show the orders table in table
-while($row = $r->fetch_assoc()){
-    echo $row['id'] . "<br>";
-    echo $row['user_id'] . "<br>";
-    echo $row['total'] . "<br>";
-    echo $row['discount'] . "<br>";
-    echo  "<a href='orderdetails.php?id=".$row['id']."'>Details</a><hr>";
-}
-?>
 <!-- order end -->
                 </div>
             </main>
